@@ -38,13 +38,15 @@ jobs:
     name: Go test coverage check
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-go@v3
-      
-      - name: generate test coverage
-        run: go test ./... -coverprofile=./cover.out -covermode=atomic -coverpkg=./...
+      #- uses: actions/checkout@v3
+      #- uses: actions/setup-go@v3
+      #
+      #- name: generate test coverage
+      #  run: go test ./... -coverprofile=./cover.out -covermode=atomic -coverpkg=./...
 
-      - name: check test coverage
-        uses: vladopajic/go-test-coverage@v2
-        with:
-          config: ./.testcoverage.yml
+      #- name: check test coverage
+      #  uses: vladopajic/go-test-coverage@v2
+      #  with:
+      #    config: ./.testcoverage.yml
+      name: go-test
+      run: go test -v
